@@ -1,0 +1,35 @@
+{
+  "name": "2024_FullStack_11_PhoneApp_CICD",
+  "version": "1.0.0",
+  "description": "Puhelinluettelo CICD",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "build:ui": "@powershell Remove-Item -Recurse -Force dist && cd ../2024_FullStackOpen/2/puhelinluettelo/ && npm run build && @powershell Copy-Item dist -Recurse ../../../2024_FullStack_11_PhoneApp_CICD/",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push",
+    "lint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hakkamar/2024_FullStack_11_PhoneApp_CICD.git"
+  },
+  "author": "Marko Hakkarainen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hakkamar/2024_FullStack_11_PhoneApp_CICD.git/issues"
+  },
+  "homepage": "https://github.com/hakkamar/2024_FullStack_11_PhoneApp_CICD.git#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.3.0",
+    "nodemon": "^3.1.0"
+  }
+}

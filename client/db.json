@@ -1,0 +1,64 @@
+{
+  "persons": [
+    {
+      "name": "Arto Hellas",
+      "number": "040-123456",
+      "id": "1"
+    },
+    {
+      "name": "Ada Lovelace",
+      "number": "39-44-5323523",
+      "id": "2"
+    },
+    {
+      "name": "Dan Abramov",
+      "number": "12-43-234345",
+      "id": "3"
+    },
+    {
+      "name": "Mary Poppendieck",
+      "number": "39-23-6423122",
+      "id": "4"
+    },
+    {
+      "name": "Netta",
+      "number": "1998",
+      "id": "7301"
+    },
+    {
+      "name": "Niko",
+      "number": "045-6388795",
+      "id": "694b"
+    },
+    {
+      "id": "da31",
+      "name": "Sipe",
+      "number": "1234124"
+    },
+    {
+      "name": "Natalia",
+      "number": "050-5114640",
+      "id": "284c"
+    },
+    {
+      "name": "Marko",
+      "number": "040-3446584",
+      "id": "1374"
+    },
+    {
+      "name": "Jaska Jokunen",
+      "number": "888888",
+      "id": "97eb"
+    },
+    {
+      "id": "3e41",
+      "name": "YksYksKakkonen",
+      "number": "112"
+    },
+    {
+      "name": "Tatatat",
+      "number": "99999999999",
+      "id": "d7f5"
+    }
+  ]
+}
