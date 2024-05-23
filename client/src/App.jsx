@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
 import personService from "./services/persons";
 
@@ -52,7 +53,7 @@ const App = () => {
       if (ok) {
         // Saatiin lupa, joten Päivitetään...
         const muutettava = persons.find(
-          (z) => pieniksi(z.name) == pieniksi(newName)
+          (z) => pieniksi(z.name) === pieniksi(newName)
         );
         personService
           .update(muutettava.id, nameAndNumberObject)
@@ -65,6 +66,7 @@ const App = () => {
             setMessuMessage(`Updated '${updatedPerson.name}' to Phonebook.`);
           })
           .catch((error) => {
+            // eslint-disable-next-line no-console
             console.log(error);
             errori = true;
             //setPersons(persons.filter((n) => n.id !== muutettava.id));

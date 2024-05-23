@@ -1,5 +1,5 @@
 {
-  "name": "2024_FullStack_11_PhoneApp_CICD",
+  "name": "phoneapp_cicd",
   "version": "1.0.0",
   "description": "Puhelinluettelo CICD",
   "main": "index.js",

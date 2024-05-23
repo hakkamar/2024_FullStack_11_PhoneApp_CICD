@@ -2,30 +2,39 @@
 
 import jsPlugin from "@eslint/js";
 import globals from "globals";
-import babelParser from "@babel/eslint-parser";
+//import babelParser from "@babel/eslint-parser";
 
 const ignores = ["**/dist/**/*"];
 
 const jsConfig = {
-  //files: ["**/**/*.{js,jsx}"],
+  files: ["**/**/*.{js,jsx}"],
   //files: ["**/**/*.jsx"],
-  files: ["**/**/*.js"],
+  //files: ["**/**/*.js"],
   rules: {
     ...jsPlugin.configs["recommended"].rules,
     indent: ["error", 2],
     eqeqeq: "error",
-    "no-console": 0,
+    "no-trailing-spaces": "error",
+    "object-curly-spacing": ["error", "always"],
+    "arrow-spacing": ["error", { before: true, after: true }],
+    "no-console": "error",
     "react/prop-types": 0,
   },
   languageOptions: {
     //parser: babelParser,
     ecmaVersion: "latest",
     sourceType: "module",
+    parserOptions: {
+      ecmaFeatures: {
+        jsx: true,
+      },
+    },
     globals: {
       ...globals.browser,
       ...globals.commonjs,
       ...globals.es2021,
       ...globals.node,
+      ...globals.jest,
       myCustomGlobal: "readonly",
     },
   },
