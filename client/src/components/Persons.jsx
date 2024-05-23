@@ -1,3 +1,5 @@
+import React from "react";
+
 const Persons = ({ haluttu, deleteNameAndNumber }) => {
   //console.log("Persons", haluttu);
   return (

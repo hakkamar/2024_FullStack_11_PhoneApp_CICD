@@ -1,3 +1,5 @@
+import React from "react";
+
 const Filtteri = ({ value, onChange }) => {
   return (
     <form className="formi">

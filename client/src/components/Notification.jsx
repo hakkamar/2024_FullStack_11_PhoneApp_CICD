@@ -1,3 +1,5 @@
+import React from "react";
+
 const Notification = ({ message, errori }) => {
   if (message === null) {
     return null;

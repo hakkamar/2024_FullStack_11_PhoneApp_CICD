@@ -1,3 +1,5 @@
+import React from "react";
+
 const PersonForm = ({ onSubmit, value, onChange, value2, onChange2 }) => {
   return (
     <form className="formi" onSubmit={onSubmit}>

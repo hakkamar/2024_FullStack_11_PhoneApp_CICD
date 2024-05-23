@@ -41,7 +41,8 @@ app.use(
   })
 );
 //app.use(express.static("dist"));
-app.use(express.static("./server/dist"));
+//app.use(express.static("./server/dist"));
+app.use(express.static("dist"));
 
 let kpl = 0;
 
