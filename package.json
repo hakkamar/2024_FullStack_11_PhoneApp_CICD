@@ -7,8 +7,6 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "build": "webpack --mode=production",
-    "build:ui": "@powershell Remove-Item -Recurse -Force dist && cd ../2024_FullStackOpen/2/puhelinluettelo/ && npm run build && @powershell Copy-Item dist -Recurse ../../../2024_FullStack_11_PhoneApp_CICD/",
-    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push",
     "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
