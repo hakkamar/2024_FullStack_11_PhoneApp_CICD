@@ -23,15 +23,13 @@
   "dependencies": {
     "@babel/eslint-parser": "^7.24.5",
     "axios": "^1.7.2",
-    "core-js": "^3.37.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mongoose": "^8.4.0",
     "morgan": "^1.10.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "regenerator-runtime": "^0.14.1"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.24.5",
