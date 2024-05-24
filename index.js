@@ -72,7 +72,7 @@ app.get("/info", (request, response) => {
 });
 
 app.get("/version", (req, res) => {
-  res.send("1"); // change this string to ensure a new version deployed
+  res.send("0.1"); // change this string to ensure a new version deployed
 });
 
 // Haetaan kaikki...
