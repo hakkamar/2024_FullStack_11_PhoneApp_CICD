@@ -71,6 +71,10 @@ app.get("/info", (request, response) => {
   response.send(infoTexti);
 });
 
+app.get("/version", (req, res) => {
+  res.send("1"); // change this string to ensure a new version deployed
+});
+
 // Haetaan kaikki...
 app.get("/api/persons", (request, response) => {
   //console.log("Haetaan koko puhelinmuistio");
