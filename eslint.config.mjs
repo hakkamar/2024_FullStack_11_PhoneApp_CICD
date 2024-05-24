@@ -1,4 +1,4 @@
-// eslint.config.js
+// eslint.config.mjs (eslint.config.js)
 
 import jsPlugin from "@eslint/js";
 import globals from "globals";

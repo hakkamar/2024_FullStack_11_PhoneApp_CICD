@@ -15,7 +15,19 @@ jobs:
           node-version: "20"
       - name: Install dependencies
         run: npm install
+      - name: Directory content
+        run: |
+          ls -l
       - name: Check style
         run: npm run lint
       - name: Build
         run: npm run build
+      - name: Directory content
+        run: |
+          ls -l
+      - name: e2e tests
+        uses: cypress-io/github-action@v5
+        with:
+          command: npm run test:e2e
+          start: npm run start
+          wait-on: http://localhost:3001
