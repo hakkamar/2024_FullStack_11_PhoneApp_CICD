@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
 
 jobs:
   simple_deployment_pipeline:
@@ -32,4 +35,35 @@ jobs:
           start: npm run start
           wait-on: http://localhost:3001
       - name: Trigger deployment
+        if: ${{ github.event_name == 'push' && !contains( join(github.event.commits.*.message, ', '), '#SKIP' ) }}
         run: curl https://api.render.com/deploy/srv-${{ secrets.RENDER_SERVICE_ID }}
+      - name: Deployment Success
+        uses: rjstone/discord-webhook-notify@v1.0.4
+        if: ${{ success() && github.event_name == 'push' && !contains( join(github.event.commits.*.message, ', '), '#SKIP' )}}
+        with:
+          severity: info
+          username: GitHub
+          description: "to https://two024-fullstack-11-phoneapp-cicd.onrender.com/ by ${{ github.event.sender.login }}"
+          footer: "Severity: informational"
+          text: A new version of Phone App cicd deployed
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+      - name: Build Failure
+        uses: rjstone/discord-webhook-notify@v1.0.4
+        if: ${{ failure() && github.event_name == 'push' && !contains( join(github.event.commits.*.message, ', '), '#SKIP' )}}
+        with:
+          severity: error
+          details: Build Failed!
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+  tag_release:
+    if: ${{ github.event_name == 'push' && !contains( join(github.event.commits.*.message, ', '), '#SKIP' ) }}
+    needs: [simple_deployment_pipeline]
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: "0"
+      - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@f7a8973e934fdd1f4fb3483d0a04d8c589df9d65
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BUMP: patch
