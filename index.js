@@ -75,6 +75,10 @@ app.get("/version", (req, res) => {
   res.send("0.1"); // change this string to ensure a new version deployed
 });
 
+app.get("/health", (req, res) => {
+  res.send("ok");
+});
+
 // Haetaan kaikki...
 app.get("/api/persons", (request, response) => {
   //console.log("Haetaan koko puhelinmuistio");
