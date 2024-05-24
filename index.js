@@ -40,7 +40,7 @@ app.use(
     ].join(" ");
   })
 );
-//app.use(express.static("dist"));
+
 //app.use(express.static("./server/dist"));
 app.use(express.static("dist"));
 
@@ -71,10 +71,12 @@ app.get("/info", (request, response) => {
   response.send(infoTexti);
 });
 
+// change this string to ensure a new version deployed
 app.get("/version", (req, res) => {
-  res.send("0.0.1"); // change this string to ensure a new version deployed
+  res.send("0.0.2");
 });
 
+// HealthCheck
 app.get("/health", (req, res) => {
   res.send("ok");
 });
