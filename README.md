@@ -1,8 +1,5 @@
-Nää on vanhan version...
-Uudet tullee jossain vaiheessa...
+https://two024-fullstack-11-phoneapp-cicd.onrender.com
 
-https://fullstack-osa3-x7us.onrender.com
+https://two024-fullstack-11-phoneapp-cicd.onrender.com/info
 
-https://fullstack-osa3-x7us.onrender.com/info
-
-https://fullstack-osa3-x7us.onrender.com/api/persons
+https://two024-fullstack-11-phoneapp-cicd.onrender.com/api/persons
