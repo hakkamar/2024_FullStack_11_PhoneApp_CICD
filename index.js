@@ -73,7 +73,7 @@ app.get("/info", (request, response) => {
 
 // change this string to ensure a new version deployed
 app.get("/version", (req, res) => {
-  res.send("0.0.2");
+  res.send("0.0.3");
 });
 
 // HealthCheck
